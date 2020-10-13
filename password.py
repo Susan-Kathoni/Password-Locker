@@ -27,18 +27,33 @@ class User:
         User.user_list.remove(self)    
 
     @classmethod
-    def find_user_by_name(cls,first_name,second_name):
+    def find_user_by_username(cls,username):
 
         '''
-        Method that takes in a first_name and second_name and returns a user that matches that name.
+        Method that takes in a username and returns a user that matches that username.
 
         Args:
-            first_name: first_name to search for
-            second_name: second_name to search for
+            username: username to search for
         Returns :
-            User that matches the name.
+            User that matches the username.
         '''
         for user in cls.user_list:
-            if user.name == name:
+            if user.username == username:
                 return user
+
+    @classmethod
+    def user_exist(cls,username):
+        '''
+        Method that checks if a user exists from the user list.
+        Args:
+            username: username to search if it exists
+        Returns :
+            Boolean: True or false depending if the user exists
+        '''
+        for user in cls.user_list:
+            if user.username == username:
+                    return True
+
+        return False   
+
    
