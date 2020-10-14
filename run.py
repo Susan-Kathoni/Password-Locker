@@ -80,6 +80,12 @@ def display_credentials():
     '''
     return Credential.display_credentials()
 
+def generate_password(user):
+    """
+    Function to generate random password for user
+    """
+    return user.generate_random_password()
+
 def main():
     print("Welcome to password locker. Please enter your username.")
     username = input()
@@ -186,7 +192,7 @@ def main():
     elif ask == "yes":
         print("Please enter your username and password to login")
         username = input("Username > ")
-        account_password = getpass.getpass()
+        password = getpass.getpass()
 
         while True:
             print("""
