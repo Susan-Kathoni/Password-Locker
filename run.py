@@ -37,7 +37,11 @@ def check_existing_users(username):
     '''
     return User.user_exist(username)
 
-
+def display_users():
+    '''
+    Function that returns all the saved users
+    '''
+    return User.display_users()
 
 def create_credential(first_name, second_name, account, username, password):
     '''
